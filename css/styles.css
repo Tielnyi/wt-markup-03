@@ -1,5 +1,6 @@
+/* ==================================== */
 /* ЗМІННІ КОЛЬОРІВ                      */
-
+/* ==================================== */
 :root {
   --primary-text-color: #757575;
   --title-text-color: #212121;
@@ -11,8 +12,9 @@
   --header-border: #ececec;
 }
 
-/* ГЛОБАЛЬНІ СКИНУТІ СТИЛІ              */
-
+/* ==================================== */
+/* ГЛОБАЛЬНІ СКИНУТІ СТИЛІ (Критерій 1) */
+/* ==================================== */
 body {
   font-family: "Roboto", sans-serif;
   color: var(--primary-text-color);
@@ -21,7 +23,7 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6, p {
-  margin: 0;
+  margin: 0; /* Скидання відступів, що пробивають батька */
 }
 
 ul {
@@ -40,7 +42,6 @@ img {
   height: auto;
 }
 
-/* Прихований заголовок */
 .visually-hidden {
   position: absolute;
   width: 1px;
@@ -54,8 +55,11 @@ img {
   overflow: hidden;
 }
 
-/* БАЗОВІ КЛАСИ ТА КОНТЕЙНЕР            */
+/* ==================================== */
+/* ГЕОМЕТРІЯ: КОНТЕЙНЕР ТА СЕКЦІЇ       */
+/* ==================================== */
 
+/* Критерії 7 та 9: Загальний клас container, ширина 1200px */
 .container {
   width: 1200px;
   padding-left: 15px;
@@ -64,6 +68,7 @@ img {
   margin-right: auto;
 }
 
+/* Критерії 14 та 15: Секції стопкою, падінги по 94px */
 .section {
   padding-top: 94px;
   padding-bottom: 94px;
@@ -77,25 +82,10 @@ img {
   margin-bottom: 50px;
 }
 
-/* ЛОГОТИП                              */
-
-.logo {
-  font-family: "Raleway", sans-serif;
-  font-weight: 700;
-  font-size: 26px;
-  color: var(--title-text-color);
-}
-.logo-accent {
-  color: var(--accent-color);
-}
-.footer-logo {
-  color: var(--white-color);
-  display: inline-block;
-  margin-bottom: 20px;
-}
-
+/* ==================================== */
 /* ШАПКА (HEADER)                       */
-
+/* ==================================== */
+/* Критерій 13: Нижня рамка хедера */
 .header {
   border-bottom: 1px solid var(--header-border);
 }
@@ -108,6 +98,16 @@ img {
 .header-nav {
   display: flex;
   align-items: center;
+}
+
+.logo {
+  font-family: "Raleway", sans-serif;
+  font-weight: 700;
+  font-size: 26px;
+  color: var(--title-text-color);
+}
+.logo-accent {
+  color: var(--accent-color);
 }
 
 .site-nav {
@@ -135,10 +135,13 @@ img {
 .auth-nav {
   display: flex;
   gap: 50px;
-  margin-left: auto; /* Відштовхує контакти вправо */
+  margin-left: auto;
 }
 
 .auth-nav-link {
+  display: block;
+  padding-top: 32px;
+  padding-bottom: 32px;
   font-weight: 500;
   font-size: 14px;
   color: var(--primary-text-color);
@@ -150,8 +153,9 @@ img {
   color: var(--accent-color);
 }
 
-/* ГОЛОВНИЙ ЕКРАН                */
-
+/* ==================================== */
+/* ГОЛОВНИЙ ЕКРАН (HERO)                */
+/* ==================================== */
 .hero {
   background-color: var(--bg-dark-color);
   text-align: center;
@@ -187,8 +191,10 @@ img {
   padding: 10px 32px;
 }
 
-/* ПЕРЕВАГИ                             */
-
+/* ==================================== */
+/* ПЕРЕВАГИ (FEATURES)                  */
+/* ==================================== */
+/* Критерій 3 та 16: Використання gap вирішує проблему крайніх марджинів у сітці */
 .features-list {
   display: flex;
   gap: 30px;
@@ -221,10 +227,11 @@ img {
   line-height: 1.71;
 }
 
+/* ==================================== */
 /* РОБОТИ                               */
-
+/* ==================================== */
 .works {
-  padding-top: 0; /* Оскільки відступ є у переваг */
+  padding-top: 0; /* Оскільки верхній відступ компенсується нижнім відступом Переваг */
 }
 
 .works-list {
@@ -236,8 +243,9 @@ img {
   flex-basis: calc((100% - 60px) / 3);
 }
 
+/* ==================================== */
 /* КОМАНДА                              */
-
+/* ==================================== */
 .team {
   background-color: var(--bg-light-color);
 }
@@ -272,7 +280,6 @@ img {
   margin-bottom: 16px;
 }
 
-/* СОЦМЕРЕЖІ */
 .social-list {
   display: flex;
   justify-content: center;
@@ -301,12 +308,19 @@ img {
   color: var(--white-color);
 }
 
+/* ==================================== */
 /* ПІДВАЛ (FOOTER)                      */
-
+/* ==================================== */
 .footer {
   background-color: var(--bg-dark-color);
   padding-top: 60px;
   padding-bottom: 60px;
+}
+
+.footer-logo {
+  color: var(--white-color);
+  display: inline-block;
+  margin-bottom: 20px;
 }
 
 .address {
